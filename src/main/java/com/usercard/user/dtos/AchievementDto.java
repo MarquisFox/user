@@ -1,6 +1,5 @@
 package com.usercard.user.dtos;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,14 +9,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventsDto {
-    private Integer id;
+public class AchievementDto {
+    private Long id;
 
-    private String name;
+    private String achievementName;
 
-    private String description;
+    private PersonDto person;
 
-    private String place;
+    private Long personId;
 
-    public Boolean archived;
+    private String urlPhoto;
+
+    private Boolean archived;
 }

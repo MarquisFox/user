@@ -1,5 +1,6 @@
 package com.usercard.user.dtos;
 
+import com.usercard.user.enities.GroupEntity;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,27 +12,23 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonDto {
-    private Integer id;
-
-    private String name;
-
+    private Long id;
 
     private String first_name;
 
     private String second_name;
 
-
     private String last_name;
 
+    private GroupDto group;
 
     private Long group_id;
 
-
-    private String achievments;
-
-
     private String login;
 
+    private String password;
 
-    private String parol;
+    private String urlPhoto;
+
+    private Boolean archived;
 }

@@ -1,4 +1,4 @@
 package com.usercard.user.controllers;
 
-public class AchievmentsController {
+public class AchievementController {
 }

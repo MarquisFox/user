@@ -9,7 +9,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AchievmentsDto {
-    private Integer id;
-    private String achievment_name;
+public class CategoryDto {
+
+    private Long id;
+
+    private String nameCategory;
+
+    private Long maxScore;
+
+    private Boolean archived;
 }

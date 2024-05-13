@@ -1,13 +1,14 @@
 package com.usercard.user.enums;
 
-public class Role implements GrantedAuthority{
+import lombok.*;
+
+@Getter
+@ToString
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+public enum Role {
     ADMIN("ADMIN"),
     USER("USER");
 
-    private final String vale;
+    private final String value;
 
-    @Override
-    public String getAuthority() {
-        return vale;
-    }
 }

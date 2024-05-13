@@ -1,5 +1,6 @@
 package com.usercard.user.dtos;
 
+import com.usercard.user.enities.InstituteEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +10,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class InstituteDto {
+public class GroupDto {
+
     private Long id;
 
-    private String adress;
+    private InstituteDto institute;
 
-    private String contactNumber;
+    private Long instituteId;
 
-    private String name;
+    private String nameGroup;
 
     private Boolean archived;
 }
