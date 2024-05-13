@@ -2,9 +2,10 @@ package com.usercard.user.repo;
 
 import com.usercard.user.enities.PersonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface PersonRepo extends JpaRepository<PersonEntity, Long> {
     List<PersonEntity> findAll();
 }

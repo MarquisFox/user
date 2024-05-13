@@ -6,5 +6,12 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <include relativeToChangelogFile="true" file="db.changelog-0.0.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_category.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_event.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_institute.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_group.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_person.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_achievements.xml"/>
+    <include relativeToChangelogFile="true" file="05_2024_changelog/db.create_table_score.xml"/>
+
 </databaseChangeLog>

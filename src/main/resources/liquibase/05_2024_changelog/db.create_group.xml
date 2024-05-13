@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="14.05.2024_5" author="MarquisFox" logicalFilePath="liquibase/05_2024_changelog/db.create_group.xml">
+
+
+        <createSequence incrementBy="1" sequenceName="hibernate_sequence" startValue="1"/>
+        <createTable tableName="group">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_group"/>
+            </column>
+            <column name="institute_id" type="BIGINT"/>
+            <column name="name_group" type="VARCHAR(255)"/>
+            <column name="archived" type="BOOLEAN"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="institute_id" baseTableName="group" constraintName="FK_GROUP_ON_INSTITUTE" referencedColumnNames="id" referencedTableName="institute"/>
+    </changeSet>
+
+</databaseChangeLog>

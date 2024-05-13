@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="14.05.2024_3" author="MarquisFox" logicalFilePath="liquibase/05_2024_changelog/db.create_table_score.xml">
+
+
+        <createSequence incrementBy="1" sequenceName="hibernate_sequence" startValue="1"/>
+        <createTable tableName="table_score">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_table_score"/>
+            </column>
+            <column name="person_id" type="BIGINT"/>
+            <column name="event_id" type="BIGINT"/>
+            <column name="score" type="BIGINT"/>
+            <column name="date_time" type="DATETIME"/>
+            <column name="archived" type="BOOLEAN"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="table_score" constraintName="FK_TABLE_SCORE_ON_EVENT" referencedColumnNames="id" referencedTableName="events"/>
+        <addForeignKeyConstraint baseColumnNames="person_id" baseTableName="table_score" constraintName="FK_TABLE_SCORE_ON_PERSON" referencedColumnNames="id" referencedTableName="person"/>
+    </changeSet>
+
+</databaseChangeLog>

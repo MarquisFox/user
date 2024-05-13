@@ -1,7 +1,14 @@
 package com.usercard.user.enities.base;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@MappedSuperclass
+@Getter
+@Setter
+@NoArgsConstructor
 public abstract class BaseEntity {
     public final static String PROP_ID = "id";
 

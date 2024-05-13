@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="14.05.2024_2" author="MarquisFox" logicalFilePath="liquibase/05_2024_changelog/db.create_event.xml">
+
+
+        <createSequence incrementBy="1" sequenceName="hibernate_sequence" startValue="1"/>
+        <createTable tableName="events">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_events"/>
+            </column>
+            <column name="name_event" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="place" type="VARCHAR(255)"/>
+            <column name="archived" type="BOOLEAN"/>
+            <column name="date_time" type="DATETIME"/>
+            <column name="url" type="VARCHAR(255)"/>
+            <column name="url_photo" type="VARCHAR(255)"/>
+            <column name="score" type="BIGINT"/>
+            <column name="category_id" type="BIGINT"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="events" constraintName="FK_EVENTS_ON_CATEGORY" referencedColumnNames="id" referencedTableName="category"/>
+    </changeSet>
+
+</databaseChangeLog>

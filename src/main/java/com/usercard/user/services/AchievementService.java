@@ -14,26 +14,25 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@AllArgsConstructor
 public class AchievementService {
     private final AchievementRepo achievementRepo;
     private final Random random = new Random();
 
-    public List<AchievementDto> showAllAchievments() {
+    public List<AchievementDto> showAllAchievements() {
         return achievementRepo.findAll().stream().map(AchievementConverter::toDto).collect(Collectors.toList());
     }
 
-    public AchievementDto showAchievmentsDto(long id) {
+    public AchievementDto showAchievementsDto(long id) {
         return AchievementConverter.toDto(achievementRepo.findById(id).get());
     }
 
-    public boolean addAchievmentsList(List<AchievementDto> dtoList) {
+    public boolean addAchievementsList(List<AchievementDto> dtoList) {
         achievementRepo.saveAll(dtoList.stream().map(AchievementConverter::toEntity).collect(Collectors.toList()));
         return true;
     }
 
     @Transactional
-    public boolean updateAchievments(AchievementDto dto) {
+    public boolean updateAchievements(AchievementDto dto) {
         if (achievementRepo.existsById(dto.getId())) {
             achievementRepo.save(AchievementConverter.toEntity(dto));
             return true;
@@ -41,7 +40,7 @@ public class AchievementService {
         return false;
     }
 
-    public boolean deleteAchievmentsById(long id) {
+    public boolean deleteAchievementsById(long id) {
         achievementRepo.deleteById(id);
         return true;
     }

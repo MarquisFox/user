@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@AllArgsConstructor
+
 public class TableScoreService {
     private final TableScoreRepo tableScoreRepo;
     private final Random random = new Random();

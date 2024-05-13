@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@AllArgsConstructor
+
 public class PersonService {
     private final PersonRepo personRepo;
     private final Random random = new Random();

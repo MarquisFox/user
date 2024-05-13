@@ -15,6 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class AchievementEntity extends BaseEntity {
+
     @Column(name = "achievement_name")
     private String achievementName;
 

@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@AllArgsConstructor
+
 public class GroupService {
     private final GroupRepo groupRepo;
     private final Random random = new Random();
