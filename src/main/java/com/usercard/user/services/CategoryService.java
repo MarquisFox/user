@@ -20,7 +20,7 @@ public class CategoryService {
     private final CategoryRepo categoryRepo;
     private final Random random = new Random();
 
-    public List<CategoryDto> showAllACategory() {
+    public List<CategoryDto> showAllCategory() {
         return categoryRepo.findAll().stream().map(CategoryConverter::toDto).collect(Collectors.toList());
     }
 
