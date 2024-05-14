@@ -50,4 +50,8 @@ public class PersonService {
         personRepo.deleteById(id);
         return true;
     }
+
+    public PersonDto findPersonByFilter(String groupName, String instituteName) {
+        return PersonConverter.toDto(personRepo.findByFilter(groupName,instituteName));
+    }
 }

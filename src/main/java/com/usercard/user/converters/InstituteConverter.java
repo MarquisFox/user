@@ -6,14 +6,20 @@ import org.springframework.beans.BeanUtils;
 
 public class InstituteConverter {
     public static InstituteDto toDto(InstituteEntity entity) {
-        InstituteDto dto = new InstituteDto();
-        BeanUtils.copyProperties(entity, dto);
+        InstituteDto dto = null;
+        if(entity != null){
+            dto = new InstituteDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static InstituteEntity toEntity(InstituteDto dto) {
-        InstituteEntity entity = new InstituteEntity();
-        BeanUtils.copyProperties(dto, entity);
+        InstituteEntity entity = null;
+        if(dto != null){
+            entity = new InstituteEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
         return entity;
     }
 }

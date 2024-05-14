@@ -6,14 +6,20 @@ import org.springframework.beans.BeanUtils;
 
 public class AchievementConverter {
     public static AchievementDto toDto(AchievementEntity entity) {
-        AchievementDto dto = new AchievementDto();
-        BeanUtils.copyProperties(entity, dto);
+        AchievementDto dto = null;
+        if (entity != null){
+            dto = new AchievementDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static AchievementEntity toEntity(AchievementDto dto) {
-        AchievementEntity entity = new AchievementEntity();
-        BeanUtils.copyProperties(dto, entity);
+        AchievementEntity entity = null;
+        if (dto != null){
+            entity = new AchievementEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
         return entity;
     }
 }

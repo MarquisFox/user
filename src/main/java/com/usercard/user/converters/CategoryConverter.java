@@ -8,14 +8,20 @@ import org.springframework.beans.BeanUtils;
 public class CategoryConverter {
 
     public static CategoryDto toDto(CategoryEntity entity) {
-        CategoryDto dto = new CategoryDto();
-        BeanUtils.copyProperties(entity, dto);
+        CategoryDto dto = null;
+        if (entity != null){
+            dto = new CategoryDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static CategoryEntity toEntity(CategoryDto dto) {
-        CategoryEntity entity = new CategoryEntity();
-        BeanUtils.copyProperties(dto, entity);
+        CategoryEntity entity = null;
+        if( dto !=null){
+            entity = new CategoryEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
         return entity;
     }
 }

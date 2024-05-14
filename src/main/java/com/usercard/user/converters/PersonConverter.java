@@ -6,14 +6,20 @@ import org.springframework.beans.BeanUtils;
 
 public class PersonConverter {
     public static PersonDto toDto(PersonEntity entity) {
-        PersonDto dto = new PersonDto();
-        BeanUtils.copyProperties(entity, dto);
+        PersonDto dto = null;
+        if(entity != null) {
+            dto = new PersonDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static PersonEntity toEntity(PersonDto dto) {
-        PersonEntity entity = new PersonEntity();
-        BeanUtils.copyProperties(dto, entity);
+        PersonEntity entity = null;
+        if(dto != null) {
+            entity = new PersonEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
         return entity;
     }
 }

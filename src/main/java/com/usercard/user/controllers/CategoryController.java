@@ -37,7 +37,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/delete-category-by-id")
-    public boolean deleteAchievementById(@RequestParam long id) {
+    public boolean deleteCategoryById(@RequestParam long id) {
         return categoryService.deleteCategoryById(id);
     }
 }

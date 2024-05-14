@@ -9,14 +9,21 @@ import org.springframework.beans.BeanUtils;
 public class GroupConverter {
 
     public static GroupDto toDto(GroupEntity entity) {
-        GroupDto dto = new GroupDto();
-        BeanUtils.copyProperties(entity, dto);
+        GroupDto dto = null;
+        if(entity != null){
+            dto = new GroupDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static GroupEntity toEntity(GroupDto dto) {
-        GroupEntity entity = new GroupEntity();
-        BeanUtils.copyProperties(dto, entity);
+        GroupEntity entity = null;
+        if(dto != null){
+            entity = new GroupEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
+
         return entity;
     }
 }

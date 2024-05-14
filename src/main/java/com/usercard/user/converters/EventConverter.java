@@ -6,14 +6,20 @@ import org.springframework.beans.BeanUtils;
 
 public class EventConverter {
     public static EventDto toDto(EventEntity entity) {
-        EventDto dto = new EventDto();
-        BeanUtils.copyProperties(entity, dto);
+        EventDto dto = null;
+        if (entity != null){
+            dto = new EventDto();
+            BeanUtils.copyProperties(entity, dto);
+        }
         return dto;
     }
 
     public static EventEntity toEntity(EventDto dto) {
-        EventEntity entity = new EventEntity();
-        BeanUtils.copyProperties(dto, entity);
+        EventEntity entity = null;
+        if (dto != null){
+            entity = new EventEntity();
+            BeanUtils.copyProperties(dto, entity);
+        }
         return entity;
     }
 }

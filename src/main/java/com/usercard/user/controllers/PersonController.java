@@ -40,4 +40,9 @@ public class PersonController {
     public boolean deletePersonById(@RequestParam long id) {
         return personService.deletePersonsById(id);
     }
+
+    @PostMapping("/find-by-filter")
+    public PersonDto findPersonByFilter(@RequestParam String groupName, @RequestParam String instituteName){
+        return personService.findPersonByFilter(groupName,instituteName);
+    }
 }
