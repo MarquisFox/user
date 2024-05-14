@@ -8,6 +8,7 @@ import com.usercard.user.repo.InstituteRepo;
 import com.usercard.user.repo.PersonRepo;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 
 public class PersonService {
+
     private final PersonRepo personRepo;
     private final Random random = new Random();
 
