@@ -12,7 +12,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/test
     username: postgres
-    password: 1234
+    password: admin2005
   liquibase:
     change-log: classpath:liquibase/db.changelog-master.xml
 
