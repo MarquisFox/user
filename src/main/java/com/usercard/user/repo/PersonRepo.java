@@ -19,4 +19,5 @@ public interface PersonRepo extends JpaRepository<PersonEntity, Long> {
             "and\n" +
             "LOWER(i.name) LIKE LOWER('%:instituteName%')", nativeQuery = true)
     PersonEntity findByFilter (@Param("groupName") String groupName, @Param("instituteName") String instituteName);
+
 }

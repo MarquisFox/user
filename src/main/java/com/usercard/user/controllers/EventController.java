@@ -40,4 +40,7 @@ public class EventController {
     public boolean deleteEventById(@RequestParam long id) {
         return eventService.deleteEventsById(id);
     }
+
+
 }
+
